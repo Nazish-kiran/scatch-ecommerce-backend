@@ -1,7 +1,4 @@
-import { name } from "ejs";
 import mongoose from "mongoose";
-import { type } from "os";
-import { text } from "stream/consumers";
 
 const productSchema = new mongoose.Schema({
   image: String,

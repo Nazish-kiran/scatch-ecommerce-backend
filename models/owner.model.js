@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema({
+const ownerSchema = new mongoose.Schema({
   fullname: {
     type: String,
     trim: true,
@@ -8,11 +8,9 @@ const userSchema = new mongoose.Schema({
   },
   email: String,
   password: String,
-  cart: Array,
-  isadmin: Boolean,
-  orders: Array,
-  contact: Number,
   picture: String,
+  gstin: String,
+  products: Array,
 });
 
-export default mongoose.model("User", userSchema);
+export default mongoose.model("Owner", ownerSchema);
