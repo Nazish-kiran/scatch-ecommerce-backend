@@ -1,5 +1,5 @@
 import express from "express";
-import ownerModel from "../models/owner.model.js";
+import ownerModel from "../models/owner-model.js";
 
 const router = express.Router();
 

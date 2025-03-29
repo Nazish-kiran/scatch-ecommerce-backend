@@ -6,6 +6,8 @@ import usersRouter from "./routes/usersRouter.js";
 import ownersRouter from "./routes/ownersRouter.js";
 import productsRouter from "./routes/productsRouter.js";
 import indexRouter from './routes/index.js'
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 
