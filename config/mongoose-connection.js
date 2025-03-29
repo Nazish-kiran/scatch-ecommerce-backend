@@ -1,14 +1,18 @@
 import mongoose from "mongoose";
+import debug from "debug";
+import dotenv from 'dotenv';
+dotenv.config();
+
+const dbgr = debug("development:mongoose");
+const MONGO_URI = process.env.MONGODB_URI;
 
 mongoose
-  .connect(
-    "mongodb+srv://nazishkirancosmos123:admin123@cluster2.ddkwu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster2"
-  )
+  .connect(MONGO_URI)
   .then(() => {
-    console.log("Connected to the database");
+    dbgr("Connected to the database");
   })
   .catch((err) => {
-    console.log("Error connecting to the database", err);
+    dbgr("Error connecting to the database", err);
   });
 
 export default mongoose.connection;

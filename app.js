@@ -5,6 +5,7 @@ import path from "path";
 import usersRouter from "./routes/usersRouter.js";
 import ownersRouter from "./routes/ownersRouter.js";
 import productsRouter from "./routes/productsRouter.js";
+import indexRouter from './routes/index.js'
 
 const app = express();
 
@@ -15,16 +16,12 @@ app.use(express.static(path.join(import.meta.dirname, "public")));
 
 app.set("view engine", "ejs");
 
-// app.use("/owners", ownersRouter);
-// app.use("/users", (req, res, next) => {
-//   console.log("Users router middleware triggered!");
-//   next();
-// }, usersRouter);
-// app.use("/products", productsRouter);
+console.log("Users router middleware triggered!");
+app.use("/owners", ownersRouter);
+app.use("/users", usersRouter);
+app.use("/products", productsRouter);
+app.use('/',indexRouter)
 
-app.get("/", (req, res) => {
-  res.send("Welcome to the home page!");
-})
 
 const PORT = 3000;
 
