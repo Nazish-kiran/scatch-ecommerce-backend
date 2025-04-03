@@ -23,4 +23,6 @@ router.post("/create", async (req, res) => {
   res.status(201).send(createdOwner);
 });
 
+router.get
+
 export default router;
