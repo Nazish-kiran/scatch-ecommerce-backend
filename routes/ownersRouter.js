@@ -23,6 +23,9 @@ router.post("/create", async (req, res) => {
   res.status(201).send(createdOwner);
 });
 
-router.get
+router.get("/admin", (req , res)=>{
+  let sucess = req.flash("sucess")
+  res.render("createproducts", {sucess})
+})
 
 export default router;
