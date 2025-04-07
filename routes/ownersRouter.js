@@ -24,8 +24,9 @@ router.post("/create", async (req, res) => {
 });
 
 router.get("/admin", (req , res)=>{
-  let sucess = req.flash("sucess")
-  res.render("createproducts", {sucess})
+  let success = req.flash("success")
+  let error = req.flash("error")
+  res.render("createproducts", {success, error})
 })
 
 export default router;
