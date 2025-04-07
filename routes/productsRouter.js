@@ -19,6 +19,7 @@ router.post("/create", upload.single("image"), async (req, res) => {
     panelcolor,
     textcolor,
   });
+  res.status(201).send(product);
 });
 
 export default router;
