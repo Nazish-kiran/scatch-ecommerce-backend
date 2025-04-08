@@ -1,3 +1,39 @@
 </body>
 
+<!-- Footer Section -->
+<% var loggedin = typeof loggedin !== 'undefined' ? loggedin : true; %> 
+<% if (loggedin) { %>
+<footer class="bg-blue-500 text-white py-6 mt-10">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <!-- Left Section: Text or Links -->
+      <div class="flex flex-col items-center md:items-start">
+        <h3 class="text-xl font-bold">Scatch</h3>
+        <p class="mt-2">Your one-stop shop for all Bags!</p>
+      </div>
+
+      <!-- Middle Section: Social Icons -->
+      <div class="mt-4 md:mt-0 flex space-x-4">
+        <a href="#" class="text-white hover:text-gray-400"><i class="ri-facebook-line text-2xl"></i></a>
+        <a href="#" class="text-white hover:text-gray-400"><i class="ri-twitter-line text-2xl"></i></a>
+        <a href="#" class="text-white hover:text-gray-400"><i class="ri-instagram-line text-2xl"></i></a>
+        <a href="#" class="text-white hover:text-gray-400"><i class="ri-linkedin-line text-2xl"></i></a>
+      </div>
+
+      <!-- Right Section: Links -->
+      <div class="mt-4 md:mt-0">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="text-white hover:text-gray-400">Privacy Policy</a></li>
+          <li><a href="#" class="text-white hover:text-gray-400">Terms of Service</a></li>
+          <li><a href="#" class="text-white hover:text-gray-400">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center mt-6 border-t border-gray-700 pt-4">
+      <p>&copy; 2025 Scatch. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<% } %>
 </html>

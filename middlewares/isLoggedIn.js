@@ -20,6 +20,4 @@ const isLoggedIn = async (req, res, next) => {
   }
 };
 
-export { isLoggedIn };
-
-
+export default isLoggedIn ;

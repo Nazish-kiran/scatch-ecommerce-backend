@@ -11,6 +11,7 @@ const productSchema = new mongoose.Schema({
   bgcolor: String,
   panelcolor: String,
   textcolor: String,
+  createdAt: { type: Date, default: Date.now },
 });
 
 export default mongoose.model("Product", productSchema);

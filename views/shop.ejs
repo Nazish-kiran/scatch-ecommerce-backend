@@ -1,12 +1,24 @@
-<%- include('./partials/header') %>
+<%- include('./partials/header') %><% if(success.length>0){ %>
+<div
+  class="absolute top-5 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 rounded-md bg-green-500"
+>
+  <span class="inline-block mt-1 mb-1 text-white"> <%= success %> </span>
+</div>
+<% } %>
 <div class="w-full h-screen flex items-start px-20 py-20">
   <div class="w-[25%] flex h-screen flex-col items-start">
     <div class="flex items-center gap-2">
       <h3>sort by</h3>
-      <form action="/shop">
-        <select class="border-[1px] px-2 py-1" name="sortby" id="">
+      <form action="/filter" method="get">
+        <select
+          class="border-[1px] px-2 py-1"
+          name="sortby"
+          id="sortby"
+          onchange="this.form.submit()"
+        >
           <option value="popular">Popular</option>
           <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
         </select>
       </form>
     </div>
@@ -22,7 +34,7 @@
     </div>
   </div>
   <div class="w-[75%] flex flex-col gap-5 h-screen">
-    <div class="flex items-start gap-5">
+    <div class="flex items-start gap-5 flex-wrap">
       <% products.forEach((product) => { %>
       <div class="w-60">
         <div
@@ -38,7 +50,7 @@
         <div
           class="flex justify-between items-center px-4 py-4"
           style="
-            background-color: <%product.panelcolor || grey%>;
+            background-color: <%= product.panelcolor%>;
             color: <%= product.textcolor || black%>;
           "
         >
